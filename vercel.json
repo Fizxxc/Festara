@@ -1,27 +1,14 @@
 {
   "version": 2,
-  "public": true,
   "cleanUrls": true,
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/admin",
-      "dest": "/admin.html"
-    },
-    {
-      "src": "/login",
-      "dest": "/login.html"
-    },
-    {
-      "src": "/register",
-      "dest": "/register-admin.html"
-    },
-    {
-      "src": "/success",
-      "dest": "/success.html"
-    }
+  "rewrites": [
+    { "source": "/",        "destination": "/public/index.html" },
+    { "source": "/admin",   "destination": "/public/admin.html" },
+    { "source": "/login",   "destination": "/public/login.html" },
+    { "source": "/register","destination": "/public/register-admin.html" },
+    { "source": "/success", "destination": "/public/success.html" },
+    { "source": "/assets/(.*)", "destination": "/public/assets/$1" },
+    { "source": "/js/(.*)",     "destination": "/public/js/$1" },
+    { "source": "/(.*)",        "destination": "/public/$1" }
   ]
 }
